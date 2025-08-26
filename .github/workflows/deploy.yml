@@ -34,6 +34,14 @@ jobs:
         cd client
         CI=false npm run build
         
+    - name: Add .nojekyll file
+      run: |
+        touch client/build/.nojekyll
+        
+    - name: List build contents
+      run: |
+        ls -la client/build/
+        
     - name: Setup Pages
       uses: actions/configure-pages@v4
       
