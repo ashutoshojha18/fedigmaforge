@@ -3,7 +3,7 @@ import About from '../components/About';
 
 const AboutPage = () => {
   return (
-    <div className="fade-in-up" style={{paddingTop: '80px'}}>
+    <div style={{paddingTop: '80px'}}>
       <About />
     </div>
   );

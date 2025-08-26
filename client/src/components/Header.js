@@ -7,16 +7,16 @@ const Header = () => {
   const navigate = useNavigate();
 
   const handleLogoClick = () => {
+    window.scrollTo({ top: 0, behavior: 'instant' });
     navigate('/');
-    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   const handleNavClick = (path) => {
-    navigate(path);
     setIsMenuOpen(false);
     setTimeout(() => {
+      navigate(path);
       window.scrollTo({ top: 0, behavior: 'smooth' });
-    }, 100);
+    }, 300);
   };
 
   return (
@@ -29,7 +29,7 @@ const Header = () => {
       <nav className="nav container">
         <button onClick={handleLogoClick} className="logo logo-btn">Fedigma Forge</button>
         
-        <ul className={`nav-menu ₹{isMenuOpen ? 'active' : ''}`}>
+        <ul className={`nav-menu ${isMenuOpen ? 'active' : ''}`}>
           <li><button className="nav-link" onClick={() => handleNavClick('/')}>Home</button></li>
           <li><button className="nav-link" onClick={() => handleNavClick('/about')}>About</button></li>
           <li><button className="nav-link" onClick={() => handleNavClick('/services')}>Services</button></li>

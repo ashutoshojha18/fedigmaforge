@@ -3,7 +3,7 @@ import Services from '../components/Services';
 
 const ServicesPage = () => {
   return (
-    <div className="fade-in-up" style={{paddingTop: '80px'}}>
+    <div style={{paddingTop: '80px'}}>
       <Services />
     </div>
   );

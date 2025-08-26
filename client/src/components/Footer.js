@@ -6,10 +6,8 @@ const Footer = () => {
   const navigate = useNavigate();
 
   const handleNavClick = (path) => {
+    window.scrollTo({ top: 0, behavior: 'instant' });
     navigate(path);
-    setTimeout(() => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }, 100);
   };
 
   return (
