@@ -37,7 +37,7 @@ const Header = () => {
           <li><button className="nav-link" onClick={() => handleNavClick('/contact')}>Contact</button></li>
         </ul>
         
-        <div className="nav-toggle" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+        <div className={`nav-toggle ${isMenuOpen ? 'active' : ''}`} onClick={() => setIsMenuOpen(!isMenuOpen)}>
           <span></span>
           <span></span>
           <span></span>
