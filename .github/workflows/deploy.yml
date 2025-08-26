@@ -24,10 +24,18 @@ jobs:
       with:
         node-version: '18'
         
+    - name: Cache dependencies
+      uses: actions/cache@v3
+      with:
+        path: ~/.npm
+        key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+        restore-keys: |
+          ${{ runner.os }}-node-
+          
     - name: Install dependencies
       run: |
         cd client
-        npm install --legacy-peer-deps
+        npm ci --legacy-peer-deps
         
     - name: Build
       run: |
